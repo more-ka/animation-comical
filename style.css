@@ -1,0 +1,43 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+}
+.code-wripper{
+  flex:1;
+  height: 50%;position: relative;
+}
+.view-wripper{
+  flex:1;
+  height: 50%;
+}
+.code{
+  overflow: hidden;
+  height: 100%;
+  padding: 16px;
+}
+.buttons{
+  position: absolute;
+  display: flex;
+  flex-direction: column;  
+  right:0;
+  top:0;
+}
+.buttons > button{
+  background: lightgrey;
+  margin: 0.5vw;
+  cursor: pointer;
+  padding: 1vw 2vw;
+  border: 1px solid lightgrey;
+}
+.buttons > button.active{
+  background: lightskyblue;
+}
+.buttons > button:focus{
+  outline: none;
+}
