@@ -1,5 +1,5 @@
 !function(){
-  var duration = 10
+  var duration = 0
   $('.buttons').on('click','button',function(e){
     let $button = $(e.currentTarget)
     let speed = $button.attr('data-speed')
@@ -7,13 +7,13 @@
     .siblings('.active').removeClass('active')
     switch(speed){
       case 'slow':
-      duration = 40
+      duration = 100
       break
       case 'normal':
-      duration = 10
+      duration = 50
       break
       case 'fast':
-      duration = 0
+      duration = 1
       break
     }
   })
@@ -25,12 +25,11 @@
     var id
     id = setTimeout(function run(){
       n += 1
-      domCode.innerHTML = code.substring(0, n)
+      domCode.innerHTML = Prism.highlight(code.substring(0, n), Prism.languages.css, 'css');
       styleTag.innerHTML = code.substring(0, n)
       domCode.scrollTop = domCode.scrollHeight
       if (n < code.length) {
         id = setTimeout(run, duration)
-        console.log(duration)
       }else{
         fn && fn.call
       }
@@ -40,7 +39,7 @@
   let code = `/*给你画一只大大的滑稽*/
 
 .view{
-  background: lightgrey;
+  background: #e7e3e3;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -54,9 +53,9 @@
   height: 300px;
   background: radial-gradient(ellipse at center, #F5D187 0%, rgba(252, 234, 187, 1) 0%, rgba(252, 205, 77, 1) 100%);
   border-radius: 150px;
-  border: 8px solid #F09F4D;
+  border: 8px solid #F2BA65;
   position: relative;
-  box-shadow: 0px 6px 20px 1px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 1px 5px 1px rgba(0, 0, 0, 0.75);
 }
 
 /*画一个嘴巴*/
@@ -65,7 +64,7 @@
   width: 226px;
   height: 200px;
   border-radius: 50%;
-  border-bottom: 10px solid #89532F;
+  border-bottom: 10px solid #000000;
   position: absolute;
   bottom: 30px;
   left: 28px;
@@ -73,16 +72,7 @@
 
 /*画两个眼睛*/
 
-.eye {
-  right: -11px;
-  top: 23px;
-  width: 80px;
-  height: 80px;
-  position: relative;
-  overflow: hidden;
-  transform: rotate(45deg);
-  border-radius: 26%;
-}
+
 .eye::before {
   top: -14px;
   left: -14px;
@@ -104,29 +94,7 @@
   border: 4px solid #F1A937;
   border-radius: 150px;
 }
-.eye.right {
-  left: 188px;
-  top: 38px;
-}
 
-.eye corner {
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  width: 14px;
-  height: 14px;
-  background: red;
-}
-.corner.left {
-  position: absolute;
-  top: -22px;
-  left: -2px;
-  width: 12px;
-  height: 24px;
-  position: relative;
-  overflow: hidden;
-  transform: rotate(-19deg);
-}
 .corner.left::after {
   top: 0px;
   left: 0px;
@@ -137,16 +105,7 @@
   border: 4px solid #F1A937;
   border-radius: 15px;
 }
-.corner.right {
-  position: absolute;
-  top: -46px;
-  right: -92px;
-  width: 13px;
-  height: 22px;
-  position: relative;
-  overflow: hidden;
-  transform: rotate(19deg);
-}
+
 .corner.right::before {
   top: 0px;
   right: 0px;
@@ -185,16 +144,7 @@
 
 /*画眼睛的巩膜*/
 
-.bg {
-  left: 8px;
-  top: 21px;
-  width: 86px;
-  height: 88px;
-  position: absolute;
-  transform: rotate(44deg);
-  border-radius: 100% 42% 91% 42%;
-  overflow: hidden;
-}
+
 .bg::before {
   content: "";
   top: -13px;
@@ -208,13 +158,7 @@
 
 /*两根粗粗的眉毛*/
 
-.eyebrow.left {
-  top: 24px;
-  left: 10px;
-  width: 60px;
-  height: 40px;
-  position: relative;
-}
+
 .eyebrow.left::after {
   top: 0px;
   left: 0px;
@@ -259,7 +203,7 @@
   position: absolute;
 }
 
-/*完成*/
+/* 完成 */
 
 `
   writeCode('', code)

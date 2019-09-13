@@ -7,6 +7,7 @@
 body {
   width: 100%;
   height: 100vh;
+  font: 14px/1.5 Arial;
 }
 .code-wripper{
   flex:1;
@@ -19,25 +20,86 @@ body {
 .code{
   overflow: hidden;
   height: 100%;
-  padding: 16px;
+  padding: 32px;
 }
 .buttons{
   position: absolute;
   display: flex;
   flex-direction: column;  
-  right:0;
-  top:0;
+  right:32px;
+  top:32px;
 }
 .buttons > button{
-  background: lightgrey;
+  background: #e7e3e3;
   margin: 0.5vw;
   cursor: pointer;
   padding: 1vw 2vw;
-  border: 1px solid lightgrey;
+  border: none;
 }
 .buttons > button.active{
   background: lightskyblue;
 }
 .buttons > button:focus{
   outline: none;
+}
+.eye {
+  right: -11px;
+  top: 23px;
+  width: 80px;
+  height: 80px;
+  position: relative;
+  overflow: hidden;
+  transform: rotate(45deg);
+  border-radius: 26%;
+}
+.eye.right {
+  left: 188px;
+  top: 38px;
+}
+
+.eye corner {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 14px;
+  height: 14px;
+  background: red;
+}
+
+.corner.left {
+  position: absolute;
+  top: -22px;
+  left: -2px;
+  width: 12px;
+  height: 24px;
+  position: relative;
+  overflow: hidden;
+  transform: rotate(-19deg);
+}
+.corner.right {
+  position: absolute;
+  top: -46px;
+  right: -92px;
+  width: 13px;
+  height: 22px;
+  position: relative;
+  overflow: hidden;
+  transform: rotate(19deg);
+}
+.bg {
+  left: 8px;
+  top: 21px;
+  width: 86px;
+  height: 88px;
+  position: absolute;
+  transform: rotate(44deg);
+  border-radius: 100% 42% 91% 42%;
+  overflow: hidden;
+}
+.eyebrow.left {
+  top: 24px;
+  left: 10px;
+  width: 60px;
+  height: 40px;
+  position: relative;
 }
