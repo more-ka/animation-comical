@@ -7,10 +7,7 @@
     .siblings('.active').removeClass('active')
     switch(speed){
       case 'slow':
-      duration = 100
-      break
-      case 'normal':
-      duration = 50
+      duration = 20
       break
       case 'fast':
       duration = 1
@@ -24,7 +21,8 @@
     var n = 0
     var id
     id = setTimeout(function run(){
-      n += 1
+      console.log(duration)
+      n += 2
       domCode.innerHTML = Prism.highlight(code.substring(0, n), Prism.languages.css, 'css');
       styleTag.innerHTML = code.substring(0, n)
       domCode.scrollTop = domCode.scrollHeight
@@ -64,7 +62,7 @@
   width: 226px;
   height: 200px;
   border-radius: 50%;
-  border-bottom: 10px solid #000000;
+  border-bottom: 10px solid #584848;
   position: absolute;
   bottom: 30px;
   left: 28px;
