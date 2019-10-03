@@ -10,39 +10,54 @@ body {
   font: 14px/1.5 Arial;
   overflow: hidden;
 }
-.code-wripper{
-  flex:1;
-  height: 50%;position: relative;
+
+.code-wripper {
+  flex: 1;
+  height: 42%;
+  position: relative;
 }
-.view-wripper{
-  flex:1;
-  height: 50%;
+
+.view {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-.code{
+
+.view-wripper {
+  flex: 1;
+  height: 58%;
+}
+
+.code {
   overflow: hidden;
   height: 100%;
   padding: 32px;
 }
-.buttons{
+
+.buttons {
   position: absolute;
   display: flex;
-  flex-direction: column;  
-  right:32px;
-  top:32px;
+  flex-direction: column;
+  right: 32px;
+  top: 32px;
 }
-.buttons > button{
+
+.buttons>button {
   background: #e7e3e3;
   margin: 0.5vw;
   cursor: pointer;
   padding: 1vw 2vw;
   border: none;
 }
-.buttons > button.active{
+
+.buttons>button.active {
   background: lightskyblue;
 }
-.buttons > button:focus{
+
+.buttons>button:focus {
   outline: none;
 }
+
 .eye {
   right: -11px;
   top: 23px;
@@ -53,12 +68,29 @@ body {
   transform: rotate(45deg);
   border-radius: 26%;
 }
+
+.eye::before,
+.eye::after {
+  content: '';
+  position: absolute;
+  width: 300px;
+  height: 300px;
+}
+
 .eye.right {
   left: 188px;
   top: 38px;
 }
 
-.eye corner {
+.eye.right::before,
+.eye.left::after {
+  top: 0px;
+  left: 0px;
+  position: absolute;
+  content: '';
+}
+
+.eye .corner {
   position: absolute;
   top: 0px;
   left: 0px;
@@ -77,6 +109,7 @@ body {
   overflow: hidden;
   transform: rotate(-19deg);
 }
+
 .corner.right {
   position: absolute;
   top: -46px;
@@ -87,6 +120,7 @@ body {
   overflow: hidden;
   transform: rotate(19deg);
 }
+
 .bg {
   left: 8px;
   top: 21px;
@@ -97,10 +131,18 @@ body {
   border-radius: 100% 42% 91% 42%;
   overflow: hidden;
 }
+
 .eyebrow.left {
   top: 24px;
   left: 10px;
   width: 60px;
   height: 40px;
   position: relative;
+}
+
+.eyebrow.left::after,
+.eyebrow.right::after {
+  content: '';
+  width: 60px;
+  height: 40px;
 }

@@ -38,17 +38,14 @@
 
 .view{
   background: #e7e3e3;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   height:100%;
 }
 
 /*画一个圆脸*/
 
 .comical {
-  width: 300px;
-  height: 300px;
+  width: 260px;
+  height: 260px;
   background: radial-gradient(ellipse at center, #F5D187 0%, rgba(252, 234, 187, 1) 0%, rgba(252, 205, 77, 1) 100%);
   border-radius: 150px;
   border: 8px solid #F2BA65;
@@ -59,13 +56,13 @@
 /*画一个嘴巴*/
 
 .mouth {
-  width: 226px;
-  height: 200px;
+  width: 200px;
+  height: 155px;
   border-radius: 50%;
   border-bottom: 10px solid #584848;
   position: absolute;
-  bottom: 30px;
-  left: 28px;
+  bottom: 22px;
+  left: 22px;
 }
 
 /*画两个眼睛*/
@@ -74,10 +71,6 @@
 .eye::before {
   top: -14px;
   left: -14px;
-  content: '';
-  position: absolute;
-  width: 300px;
-  height: 300px;
   border: 4px solid #F1A937;
   border-radius: 150px;
   transform: rotate(45deg);
@@ -86,9 +79,6 @@
   top: 0px;
   left: 0px;
   content: '';
-  position: absolute;
-  width: 300px;
-  height: 300px;
   border: 4px solid #F1A937;
   border-radius: 150px;
 }
@@ -119,12 +109,12 @@
 
 .eyes-l {
   top: 23px;
-  left: -7px;
+  left: -15px;
   position: absolute;
 }
 .eyes-r {
   top: 23px;
-  right: 14px;
+  right: 9px;
   position: absolute;
 }
 
@@ -158,8 +148,8 @@
 
 
 .eyebrow.left::after {
-  top: 0px;
-  left: 0px;
+  top: 6px;
+  left: -10px;
   content: '';
   width: 60px;
   height: 40px;
@@ -169,8 +159,8 @@
   transform: rotate(20deg);
 }
 .eyebrow.right::after {
-  top: 24px;
-  right: 10px;
+  top: 30px;
+  right: 0px;
   content: '';
   width: 60px;
   height: 40px;
